@@ -79,29 +79,43 @@ console.log(parentElement);
 /*************************************** */
 /* 1: Select the first paragraph and replace the text within the paragraph... */
 /***CODE */
+const firstParagraph = document.querySelector('p');
+firstParagraph.innerHTML = 'text changed by Tianshun Wu, 2025/1/29';
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
 /***CODE */
+const contentContainers = document.querySelectorAll('.content-container');
+contentContainers[0].style.backgroundColor = '#edd1d8';
+contentContainers[1].style.backgroundColor = '#fcefe8';
 
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
 /***CODE */
+document.querySelector('img').src = 'task-1-images/seven.png';
 
 /*************************************** */
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
 /***CODE */
+const thirdParagraph = document.querySelectorAll('p')[2];
+thirdParagraph.innerHTML = 'TEST 123';
+
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
 /***CODE */
+const fourthParagraph = document.querySelectorAll('p')[3];
+fourthParagraph.innerHTML = 'TEST 123';
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
 /***CODE */
+const fifthParagraph = document.querySelectorAll('p')[4];
+fifthParagraph.innerHTML += '<img src="task-1-images/one.png">';
+fifthParagraph.classList.add('newStyle');
 
 
 /*************************************** */
@@ -112,6 +126,13 @@ assign the element from innerContainers variable with the same index
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
 /***CODE */
+let colors = ['#30dff3','#25f8cb','#f3f9f1','#3d3b4f'];
+// const innerContainer = document.querySelectorAll('.inner-container');
+colors.forEach((color, index) => {
+    if (innerContainers[index]) {
+      innerContainers[index].style.backgroundColor = color;
+    }
+  });
 
 /*************************************** */
 /*** END PART TWO MODIFY */ 
