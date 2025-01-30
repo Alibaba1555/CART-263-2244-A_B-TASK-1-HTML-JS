@@ -7,7 +7,9 @@ console.log("we are a go!")
 /*** START PART ONE ACCESS */ 
 /* 1: all paragraph elements */
 /***CODE */
-/***OUTPUT: 
+const allParagraphs = document.querySelectorAll('p');
+console.log(allParagraphs);
+/***OUTPUT: all the paragraphs
  * 
  */
 
@@ -15,7 +17,9 @@ console.log("we are a go!")
 /*************************************** */
 /* 2: only the first paragraph element */
 /***CODE */
-/***OUTPUT: 
+const firstParagraphs= document.querySelector('p');
+console.log(firstParagraphs);
+/***OUTPUT: <p id="1">...</p>
  * 
  */
 
@@ -23,7 +27,9 @@ console.log("we are a go!")
 /*************************************** */
 /* 3: all elements with the class inner-container */
 /***CODE */
-/***OUTPUT: 
+const innerContainers = document.querySelectorAll('.inner-container');
+console.log(innerContainers);
+/***OUTPUT: all the inner containers
  * 
  */
 
@@ -31,7 +37,10 @@ console.log("we are a go!")
 /*************************************** */
 /* 4: the last image element inside the element that has the class img-container */
 /***CODE */
-/***OUTPUT: 
+const imgContainer = document.querySelector('.img-container');
+const lastImg = imgContainer.querySelector('img:last-child');
+console.log(lastImg);
+/***OUTPUT: <img class="img-image" src="task-1-images/seventeen.png" />
  * 
  */
 
@@ -41,15 +50,23 @@ console.log("we are a go!")
 /* 5B: length of the list in 5A */
 /* 5C: the text content of the first element in the list from 5A */
 /***CODE */
+const allH2 = document.querySelectorAll('h2');
+console.log(allH2); // 5A
+console.log(allH2.length); // 5B
+console.log(allH2[0].textContent); // 5C
 /***OUTPUT: 
- * 
+ * all h2 elements
+ * 2 
+ * "The header of this fancy page" text content
  */
 
 
 /*************************************** */
 /* 6: the element with id name parent */
 /***CODE */
-/***OUTPUT: 
+const parentElement = document.getElementById('parrent');
+console.log(parentElement);
+/***OUTPUT: <section id="parent">...</section>
  * 
  */
 
