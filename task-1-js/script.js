@@ -152,10 +152,20 @@ colors.forEach((color, index) => {
 /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
 passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
+const allPTagsThree = document.querySelectorAll('p'); 
 
-
+function customCreateElement(parent){ 
+   const newParagraph = document.createElement('p');
+   newParagraph.textContent = 'using create Element';
+   newParagraph.style.backgroundColor = 'green';
+   newParagraph.style.color = 'white';
+   parent.appendChild(newParagraph);
+}
+allPTagsThree.forEach(function(p) {
+    customCreateElement(p);
+  });
 /***EXPLANATION::
- * 
+ * There will be an additional paragraph with green background and white text under each paragraph, which reads "using create Element"
  * 
  */
 
