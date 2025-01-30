@@ -190,10 +190,37 @@ allPTagsThree.forEach(function(p) {
     otherwise lat it have the content `ODD`.*/
 
 /***CODE */
+function customNewBoxCreate(parent) {
+    const newDiv  = document.createElement('div');
+    newDiv.className = 'testDiv';
+    parent.appendChild(newDiv);
+    return newDiv;
+}
 
+const newGrid = document.getElementById('new-grid');
+
+for (let row = 0; row < 10; row++) {
+    for (let col = 0; col < 10; col++) {
+        const returnedDiv = customNewBoxCreate(newGrid);
+        const leftPosition = col * 45;
+        const topPosition = row * 45;
+
+        returnedDiv.style.left = leftPosition + 'px';
+        returnedDiv.style.top = topPosition + 'px';
+
+        if (row % 2 === 0) {
+            returnedDiv.style.backgroundColor = 'white';
+            returnedDiv.textContent = 'EVEN';
+        } else {
+            returnedDiv.style.backgroundColor = 'cornflowerblue';
+            returnedDiv.textContent = 'ODD';
+        }
+    }
+}
 
 /***EXPLANATION::
- * 
+ * This code generates a 10x10 grid, with each cell arranged neatly in rows and columns, with even-numbered rows showing white and "EVEN", and odd-numbered rows showing light blue and "ODD". 
+ * Testdiv in CSS is responsible for defining the size and positioning. Without this class name, the div cannot form a grid.
  * 
  */
 
