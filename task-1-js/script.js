@@ -202,11 +202,9 @@ const newGrid = document.getElementById('new-grid');
 for (let row = 0; row < 10; row++) {
     for (let col = 0; col < 10; col++) {
         const returnedDiv = customNewBoxCreate(newGrid);
-        const leftPosition = col * 45;
-        const topPosition = row * 45;
 
-        returnedDiv.style.left = leftPosition + 'px';
-        returnedDiv.style.top = topPosition + 'px';
+        returnedDiv.style.left =  col * 45 + 'px';
+        returnedDiv.style.top = row * 45 + 'px';
 
         if (row % 2 === 0) {
             returnedDiv.style.backgroundColor = 'white';
@@ -239,10 +237,29 @@ for (let row = 0; row < 10; row++) {
     when dividing by three. */
 
 /***CODE */
+const newGridThree = document.getElementById('new-grid-three');
+
+for (let row = 0; row < 10; row++) {
+    for (let col = 0; col < 10; col++) {
+        const returnedDiv = customNewBoxCreate(newGridThree);
+        returnedDiv.style.left = col * 45 + 'px';
+        returnedDiv.style.top = row * 45 + 'px'; 
+
+        const remainder = col % 3;
+        if (remainder === 0){
+            returnedDiv.style.backgroundColor = 'white';
+        } else if (remainder === 1) {
+            returnedDiv.style.backgroundColor = 'red';
+          } else {
+            returnedDiv.style.backgroundColor = 'orange';
+           }
+           returnedDiv.textContent = remainder;
+    }
+}
 
 
 /***EXPLANATION::
- * 
+ * The same logic is used, but each cell displays the remainder of its column number divided by 3, and is assigned a different color based on the three different sets of numbers.
  * 
  */
 
